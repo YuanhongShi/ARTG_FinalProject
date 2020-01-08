@@ -8,7 +8,7 @@ import { TreeMap } from './components/treemap';
 import { StackedYearProgress } from './components/stackedyearprogress';
 
 import 'jquery';
-import 'bootstrap-loader';
+import 'bootstrap-sass-loader';
 import './style/main.css'
 
 //Import utility function
@@ -31,7 +31,7 @@ const dispatch = d3.dispatch('enterYear', 'leaveYear', 'enterHead', 'enterFoot')
 
 //Import data using the Promise interface
 Promise.all([
-		fetchCsv('./data/artworks.csv', parse, ),
+		fetchCsv('./data/artworks.csv', parse),
 		fetchCsv('./data/artists.csv', parseArtist)
 	])
 	.then(([artworks, artists]) => {

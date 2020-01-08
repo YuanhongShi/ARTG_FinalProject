@@ -156,14 +156,14 @@ export function StackedYearProgress(_) {
                 return scaleX(d.data.Department); 
             })
             .attr("y", function(d) {
-                var d1 = d[1];// ? d[1] : 0;
+                var d1 = d[1]? d[1] : 0;
                 return scaleY(d1); 
             })
             .attr("width", scaleX.bandwidth()*0.4) 
             .attr("height", function(d){
-                var d0 = d[0]; //? d[0] : 0;
-                var d1 = d[1]; //? d[1] : 0;
-                return scaleY(d0) - scaleY(d1)})
+                var d0 = d[0]? d[0] : 0;
+                var d1 = d[1]? d[1] : 0;
+                return scaleY(d0-d1)})
             .attr('stroke', 'white')
             .attr('stroke-width', 0.2)
             .attr('fill', 'grey');
